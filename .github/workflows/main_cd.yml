@@ -16,6 +16,7 @@ jobs:
         
   build-image:
     runs-on: lil-server
+    needs: [ clear-container ]
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
