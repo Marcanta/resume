@@ -66,10 +66,22 @@
 				'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1200px-Svelte_Logo.svg.png'
 		},
 		{
+			name: 'Tailwind',
+			progress: 70,
+			color: '#01b8d6',
+			iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png'
+		},
+		{
 			name: 'Node JS',
 			progress: 80,
 			color: '#549e42',
-			iconUrl: 'https://cdn-icons-png.flaticon.com/512/919/919825.png'
+			iconUrl: 'https://miro.medium.com/max/1200/1*yYN3pRB9mGS-IG_-agqDvA.png'
+		},
+		{
+			name: 'Go',
+			progress: 30,
+			color: '#0196b9',
+			iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png'
 		},
 		{
 			name: 'Swift',
@@ -134,23 +146,26 @@
     ];
 </script>
 
-<div class="bg-cyan-500 h-auto">
-	<div class="hero min-h-min">
+<div class="bg-black h-auto">
+	<div class="fixed sm:bg-gradient-to-r from-sky-500 to-indigo-500 bg-auto bg-top bg-[url('/images/profile_picture.jpg');] bg-no-repeat bg-origin-border w-screen h-screen">
+	</div>
+	<div class="hero h-72 min-h-min">
 		<div class="flex flex-col sm:flex-row hero-content justify-center py-10 items-center">
-			<div class="avatar mr-2">
-				<div class="w-24 rounded-xl">
-					<img src="https://placeimg.com/192/192/people" />
+				<div class="hidden sm:flex avatar mr-2">
+					<div class="w-24 lg:w-40 rounded-xl">
+						<img src="/images/profile_picture.jpg" class="origin-top-right scale-[3] translate-x-14 -translate-y-9" alt="profile picture" />
+					</div>
 				</div>
-			</div>
-			<div class=" items-center">
+			<div class="items-center text-white">
 				<div>
-					<h1 class="text-5xl font-bold text-white">AIME MARCANT</h1>
-					<h2 class="text-3xl text-white font-light">Web developer</h2>
+					<!-- style="color: black; -webkit-text-fill-color: white;-webkit-text-stroke-width: 0px; -webkit-text-stroke-color: #fafafa;" -->
+					<h1 class="text-5xl lg:text-7xl font-bold">AIME MARCANT</h1>
+					<h2 class="text-2xl lg:text-4xl font-extralight">Web developer</h2>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="bg-base-200 px-7 py-5 rounded-t-3xl drop-shadow-xl">
+	<div class="bg-base-200 px-7 py-5 rounded-t-3xl drop-shadow-xl lg:flex lg:flex-row lg:justify-between">
 		<div>
 			<h1 class="text-2xl sm:text-3xl font-extrabold">Experiences</h1>
 			<div class="flex flex-col text-sm sm:text-base">
@@ -165,7 +180,7 @@
 								href={place.link}>{place.name}</a
 							>
 							-
-							<p class="mx-1">{date}</p>
+							<p class="mx-1 text-gray-">{date}</p>
 						</div>
 						<p class="text-gray-500 font-light text-xs sm:text-sm">
 							{description}
@@ -175,11 +190,12 @@
 			</div>
 		</div>
 		<div class="divider" />
+		<div class="lg:flex lg:flex-col">
 		<div>
 			<h1 class="text-2xl sm:text-3xl font-extrabold mb-1">Skills</h1>
 			<div class="flex flex-row flex-wrap justify-center">
 				{#each skills as { color, iconUrl, name, progress }}
-					<div class="flex flex-col m-2">
+					<div class="flex flex-col m-3">
 						<div class="radial-progress" style="--value:{progress}; color: {color}">
 							<img class="rounded-full m-2 object-scale-down h-14 w-14" src={iconUrl} />
 						</div>
@@ -192,11 +208,25 @@
 		<div>
 			<h1 class="text-2xl sm:text-3xl font-extrabold">Languages</h1>
 			<div class="flex flex-row flex-wrap justify-center">
+				<svg width="0" height="0">
+					<defs>
+					  <clipPath id="myClip">
+						<circle cx="6" cy="6" r="5" />
+						<circle cx="20" cy="6" r="5" />
+						<circle cx="34" cy="6" r="5" />
+						<circle cx="48" cy="6" r="5" />
+						<circle cx="62" cy="6" r="5" />
+						<circle cx="76" cy="6" r="5" />
+						<circle cx="90" cy="6" r="5" />
+						<circle cx="104" cy="6" r="5" />
+					  </clipPath>
+					</defs>
+				</svg>
 				{#each languages as { name, iconUrl, mark, remark }}
 					<div class="flex flex-col items-center m-2">
 						<img class="rounded-full object-scale-down h-16 w-16 mb-5 m-2" src={iconUrl} alt="flag image - {name}"/>
-						<progress class="progress progress-secondary h-3 w-28" value={mark} max="5" />
-						<p class="text-center text-xl font-bold">{remark}</p>
+						<progress class="progress progress-secondary h-3 w-28" value={mark} max="5" style="clip-path: url(#myClip);" />
+						<p class="text-center text-xl font-bold mt-1">{remark}</p>
 					</div>
 				{/each}
 			</div>
@@ -213,5 +243,6 @@
 				{/each}
 			</div>
 		</div>
+	</div>
 	</div>
 </div>

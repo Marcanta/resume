@@ -1,0 +1,19 @@
+<svg viewbox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <g id="paths" style="fill: transparent;
+            fill-opacity: 1;
+            stroke: gray;
+            stroke-width: 10">
+        <path d="M5 70 A 41 45 0 0 1 100 70" />
+        <path d="M100 70 A 41 45 0 0 0 200 70" />
+        <path d="M200 70 A 41 45 0 0 1 300 70" />
+        <path d="M300 70 A 41 45 0 0 0 400 70" />
+        <path d="M400 70 A 41 45 0 0 1 500 70" />
+        <path d="M500 70 A 41 45 0 0 0 600 70" />
+        <path d="M600 70 A 41 45 0 0 1 700 70" />
+        <path d="M700 70 A 41 45 0 0 0 800 70" />
+        <path d="M800 70 A 41 45 0 0 1 900 70" />
+        <path d="M900 70 A 41 45 0 0 0 1000 70" />
+        <path d="M1000 70 A 41 45 0 0 1 1100 70" />
+        <path d="M1100 70 A 41 45 0 0 0 1200 70" />
+    </g>
+</svg>
