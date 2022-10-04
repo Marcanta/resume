@@ -8,6 +8,12 @@ on:
     
       
 jobs:
+  clear-container:
+    runs-on: lil-server
+    steps:
+      - name: Remove old container
+        run: docker rm -f $(docker ps -q --filter="name=resume")
+        
   build-image:
     runs-on: lil-server
     steps:
