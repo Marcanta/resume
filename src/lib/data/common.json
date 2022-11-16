@@ -1,0 +1,16 @@
+{
+	"en": {
+		"homepage.title": "Web developer",
+		"homepage.experiences": "Experiences",
+		"homepage.skills": "Skills",
+		"homepage.languages": "Languages",
+		"homepage.hobbies": "My Interest"
+	},
+	"fr": {
+		"homepage.title": "Développeur Web",
+		"homepage.experiences": "Expériences",
+		"homepage.skills": "Compétences",
+		"homepage.languages": "Langues",
+		"homepage.hobbies": "Centres d'Intérêt"
+	}
+}

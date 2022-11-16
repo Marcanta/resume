@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Français",
+        "iconUrl": "https://cdn.countryflags.com/thumbs/france/flag-round-250.png",
+        "mark": 5,
+        "remark": "natif"
+    },
+    {
+        "name": "Anglais",
+        "iconUrl": "https://cdn.countryflags.com/thumbs/united-kingdom/flag-round-250.png",
+        "mark": 4.4,
+        "remark": "avancé"
+    },
+    {
+        "name": "Flamand (Néerlandais)",
+        "iconUrl": "https://cdn.countryflags.com/thumbs/belgium/flag-round-250.png",
+        "mark": 3,
+        "remark": "base"
+    },
+    {
+        "name": "Allemand",
+        "iconUrl": "https://cdn.countryflags.com/thumbs/germany/flag-round-250.png",
+        "mark": 2,
+        "remark": "base"
+    }
+]

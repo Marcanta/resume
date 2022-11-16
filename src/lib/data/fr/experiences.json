@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Baccalauréat",
+        "place": { "name": "Lycee des Flandres" },
+        "date": "07/2017",
+        "description": "Baccalauréat Scientifique, spécialité maths",
+        "job": false
+    },
+    {
+        "name": "Charpentier",
+        "place": { "name": "Eskimoo", "link": "https://www.eskimoo.be/nl" },
+        "date": "06/2018 - 09/2019",
+        "description":
+            "Job étudiant, région flamande (néerlandais), pendant les vacances. Le but de mon travail était d'isoler le toit et de faire certains travaux de toiture, ainsi que de la plomberie ponctuellement.",
+        "job": true
+    },
+    {
+        "name": "Développeur (Stage)",
+        "place": { "name": "Tabuleo", "link": "https://www.tabuleo.com/" },
+        "date": "05/2019 - 09/2019",
+        "description":
+            "Stage pour valider mon DUT, les tâches qui m'ont été confiées étaient le développement d'une application mobile et la maintenance d'applications web.",
+        "job": true
+    },
+    {
+        "name": "DUT informatique",
+        "place": { "name": "IUT A de Lille - Université de Lille" },
+        "date": "09/2020",
+        "description":
+            "Diplôme de premier cycle est donc classé au niveau III dans la nomenclature française des niveaux d'études et au niveau 5 dans celle internationale standard (CITE 2011).",
+        "job": false
+    },
+    {
+        "name": "Concepteur Développeur d'Application (CDA) en alternance",
+        "place": { "name": "EPSI" },
+        "date": "09/2021",
+        "description": "Nomenclature du niveau de qualification : Niveau 6, Code NSF : 326t Programmation, mise en place de logiciels",
+        "job": false
+    },
+    {
+        "name": "Expert en informatique et système d'information (EISI) en alternance",
+        "place": { "name": "EPSI" },
+        "date": "En cours",
+        "description": "Nomenclature du niveau de qualification: Niveau 7, Code NSF : 326 Informatique, traitement de l'information, réseaux de transmission",
+        "job": false
+    }
+]

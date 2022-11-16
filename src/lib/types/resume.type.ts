@@ -16,7 +16,7 @@ export type Skill = {
 	progress: number;
 };
 
-export type Languages = {
+export type Language = {
 	name: string;
 	iconUrl: string;
 	mark: number;
