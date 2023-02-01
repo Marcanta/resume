@@ -29,6 +29,6 @@ jobs:
     needs: [ build-image ]
     steps:
       - name: Run Docker Container...
-        run: docker run --name=resume-container-${{github.ref_name}} -p 3000:3000 resume-${{github.ref_name}}
+        run: docker run --name=resume-container-${{github.ref_name}} -p 3000:3000 -d resume-${{github.ref_name}}
 
 
