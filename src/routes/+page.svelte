@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { t, locale, getData } from "$lib/i18n";
+	import { t, locale, getData } from '$lib/i18n';
 	import Timeline from '$lib/timeline/Timeline.svelte';
 	import TimelineConnector from '$lib/timeline/TimelineConnector.svelte';
 	import TimelineContent from '$lib/timeline/TimelineContent.svelte';
@@ -10,20 +10,20 @@
 	import type { Skill } from '$lib/types/resume.type';
 
 	const loadData = (lang?: string) => ({
-		experiences: getData("experiences", lang),
-		languages: getData("languages", lang),
-		interests: getData("interests", lang)
+		experiences: getData('experiences', lang),
+		languages: getData('languages', lang),
+		interests: getData('interests', lang)
 	});
 
 	let { experiences, languages, interests } = loadData();
 
-	locale.subscribe(lang => {
+	locale.subscribe((lang) => {
 		const data = loadData(lang);
 		experiences = data.experiences;
 		languages = data.languages;
 		interests = data.interests;
 	});
-	
+
 	const skills: Skill[] = [
 		{
 			name: 'React',
@@ -82,8 +82,16 @@
 
 <div class="bg-black h-auto">
 	<div class="absolute z-10 right-0 m-2 mr-4 flex flex-row space-x-2">
-		<div on:click={() => $locale = "fr"} class="w-6"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/1200px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png"/></div>
-		<div on:click={() => $locale = "en"} class="w-8"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/800px-Flag_of_the_United_Kingdom.svg.png"/></div>
+		<div on:click={() => ($locale = 'fr')} class="w-6">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/1200px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png"
+			/>
+		</div>
+		<div on:click={() => ($locale = 'en')} class="w-8">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/800px-Flag_of_the_United_Kingdom.svg.png"
+			/>
+		</div>
 	</div>
 	<div
 		class="fixed sm:bg-gradient-to-r from-sky-500 to-indigo-500 bg-auto bg-top bg-[url('/images/profile_picture.jpg');] bg-no-repeat bg-origin-border w-screen h-screen"
@@ -103,7 +111,7 @@
 				<div>
 					<!-- style="color: black; -webkit-text-fill-color: white;-webkit-text-stroke-width: 0px; -webkit-text-stroke-color: #fafafa;" -->
 					<h1 class="text-5xl lg:text-7xl font-bold">AIME MARCANT</h1>
-					<h2 class="text-2xl lg:text-4xl font-extralight">{$t("homepage.title")}</h2>
+					<h2 class="text-2xl lg:text-4xl font-extralight">{$t('homepage.title')}</h2>
 				</div>
 			</div>
 		</div>
@@ -112,7 +120,7 @@
 		class="bg-base-200 px-7 py-5 rounded-t-3xl drop-shadow-xl lg:flex lg:flex-row lg:justify-between"
 	>
 		<div>
-			<h1 class="text-2xl sm:text-3xl font-extrabold">{$t("homepage.experiences")}</h1>
+			<h1 class="text-2xl sm:text-3xl font-extrabold">{$t('homepage.experiences')}</h1>
 			<div class="flex flex-col text-sm sm:text-base">
 				<Timeline>
 					{#each experiences as { date, description, name, place, job }}
@@ -121,7 +129,7 @@
 								<p>{date}</p>
 							</TimelineOppositeContent>
 							<TimelineSeparator>
-								<TimelineDot/>
+								<TimelineDot />
 								<TimelineConnector />
 							</TimelineSeparator>
 							<TimelineContent classes="flex flex-col">
@@ -140,11 +148,14 @@
 		<div class="divider" />
 		<div class="lg:flex lg:flex-col">
 			<div>
-				<h1 class="text-2xl sm:text-3xl font-extrabold mb-1">{$t("homepage.skills")}</h1>
+				<h1 class="text-2xl sm:text-3xl font-extrabold mb-1">{$t('homepage.skills')}</h1>
 				<div class="flex flex-row flex-wrap justify-center">
 					{#each skills as { color, iconUrl, name, progress }}
 						<div class="flex flex-col m-3">
-							<div class="radial-progress" style="--value:{progress}; --thickness: 5px; color: {color}">
+							<div
+								class="radial-progress"
+								style="--value:{progress}; --thickness: 5px; color: {color}"
+							>
 								<img class="rounded-full m-2 object-scale-down h-12 w-12" src={iconUrl} />
 							</div>
 							<p class="text-center text-xl font-bold">{name}</p>
@@ -154,7 +165,7 @@
 			</div>
 			<div class="divider" />
 			<div>
-				<h1 class="text-2xl sm:text-3xl font-extrabold">{$t("homepage.languages")}</h1>
+				<h1 class="text-2xl sm:text-3xl font-extrabold">{$t('homepage.languages')}</h1>
 				<div class="flex flex-row flex-wrap justify-center">
 					<svg width="0" height="0">
 						<defs>
@@ -190,7 +201,7 @@
 			</div>
 			<div class="divider" />
 			<div class="mb-5">
-				<h1 class="text-2xl sm:text-3xl font-extrabold">{$t("homepage.hobbies")}</h1>
+				<h1 class="text-2xl sm:text-3xl font-extrabold">{$t('homepage.hobbies')}</h1>
 				<div class="flex flex-row flex-wrap justify-center">
 					{#each interests as { name, imageUrl }}
 						<div class="flex flex-col items-center m-3 w-30">

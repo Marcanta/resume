@@ -3,14 +3,18 @@
 	import type { TimelinePosition, ParentPosition, TimelineConfig } from '../types/timeline.type';
 
 	export let position: ParentPosition | null = null;
-	export let classes: string = "";
+	export let classes: string = '';
 
 	const config = getContext<TimelineConfig>('TimelineConfig');
 	const itemPosition = position ? position : config.rootPosition;
 	setContext<TimelinePosition>('ParentPosition', itemPosition);
 </script>
 
-<li class={`list-none flex relative min-h-[70px] flex-row ${itemPosition === "right" && "md:flex-row-reverse"}  ${classes}`}>
+<li
+	class={`list-none flex relative min-h-[70px] flex-row ${
+		itemPosition === 'right' && 'md:flex-row-reverse'
+	}  ${classes}`}
+>
 	{#if !$$slots['opposite-content']}
 		<div class="flex-1 hidden md:block my-[6px] mx-4" />
 	{:else}
