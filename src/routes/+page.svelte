@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { t, locale, locales, getData } from "$lib/i18n";
+  import { t, locale, getData } from "$lib/i18n";
 	import Timeline from '$lib/timeline/Timeline.svelte';
 	import TimelineConnector from '$lib/timeline/TimelineConnector.svelte';
 	import TimelineContent from '$lib/timeline/TimelineContent.svelte';
@@ -7,16 +7,21 @@
 	import TimelineItem from '$lib/timeline/TimelineItem.svelte';
 	import TimelineOppositeContent from '$lib/timeline/TimelineOppositeContent.svelte';
 	import TimelineSeparator from '$lib/timeline/TimelineSeparator.svelte';
-	import type { Experience, Interest, Language, Skill } from '$lib/types/resume.type';
+	import type { Skill } from '$lib/types/resume.type';
 
-	let experiences: Experience[] = getData("experiences");
-	let languages: Language[] = getData("languages");
-	let interests: Interest[] = getData("interests");
+	const loadData = (lang?: string) => ({
+		experiences: getData("experiences", lang),
+		languages: getData("languages", lang),
+		interests: getData("interests", lang)
+	});
+
+	let { experiences, languages, interests } = loadData();
 
 	locale.subscribe(lang => {
-		experiences = getData("experiences", lang);
-		languages = getData("languages", lang);
-		interests = getData("interests", lang);
+		const data = loadData(lang);
+		experiences = data.experiences;
+		languages = data.languages;
+		interests = data.interests;
 	});
 	
 	const skills: Skill[] = [
